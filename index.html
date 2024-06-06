@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports World Cup 2023</title>
+    <style>
+        @font-face {
+            font-family: 'INDIA2023';
+            src: local('INDIA2023'), url('INDIA2023.ttf') format('truetype');
+        }
+
+        body {
+            font-family: 'INDIA2023', sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #DF329E;
+            padding: 20px;
+            color: #2D036E;
+            font-size: 36px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+	sectiona {
+            background-color: #fbf;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+	re{
+	    color: #DF329E;
+	}
+
+	bl{
+	    color: #2D036E;
+	}
+
+        h2 {
+            color: #2D036E;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+	li img {
+            width: 100px;
+	    height: 100px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+	    color: #2D036E;
+        }
+
+        th {
+            background-color: #2D036E;
+            color: #DF329E;
+        }
+
+        h2, table, ul {
+            margin-bottom: 20px;
+        }
+
+        h2:last-child, table:last-child, ul:last-child {
+            margin-bottom: 0;
+        }
+
+	@media only screen and (max-width: 600px) {
+            table {
+                width: 100%;
+                overflow-x: auto;
+                display: block;
+            }
+        }
+
+	.slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        img.slide-image {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            font-size: 20px;
+            color: #DF329E;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: #DF329E;
+            color: #fff;
+        }
+
+	#countdown {
+            font-size: 24px;
+            color: #2D036E;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .countdown-box {
+            margin: 0 10px;
+            padding: 10px;
+            background-color: #DF329E;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 36px;
+            width: 80px;
+            text-align: center;
+        }
+
+        @keyframes countdownAnimation {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .countdown-box {
+            animation: countdownAnimation 1s infinite;
+        }
+
+	.notification {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .notification-item {
+            margin-bottom: 20px;
+        }
+
+        .notification-item a {
+            color: #DF329E;
+            text-decoration: none;
+        }
+
+        .notification-item a:hover {
+            text-decoration: underline;
+        }
+
+	footer {
+            background-color: #2D036E;
+            padding: 20px;
+            color: #DF329E;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        Hand Table Tennis World Cup 2023
+    </header>
+
+    <sectiona>
+        <h2>Countdown to the Event</h2>
+        <div id="countdown">
+            <div class="countdown-box" id="days">00</div>
+            :
+            <div class="countdown-box" id="hours">00</div>
+            :
+            <div class="countdown-box" id="minutes">00</div>
+            :
+            <div class="countdown-box" id="seconds">00</div>
+        </div>
+
+        <script>
+            const countDownDate = new Date("Jul 1, 2024 00:00:00").getTime();
+
+            const x = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+                document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+                document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+                document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "<re>The event has started preparations! Coming Soon!</re>";
+                }
+            }, 1000);
+        </script>
+    </sectiona>
+
+    <section>
+        <h2><re>About</re> the Event</h2>
+        <p>The Hand Table Tennis World Cup 2023 is the Third Edition of the Cup, where 5 of the best teams in the World go head-to-head in pursuit of glory. The previous 2 editions saw an intense battle among member teams with 4 teams already being Finalists - this speaking a lot about the quality of the game played here.</p>
+	<p>The Champions of the previous editions are China (2021) and Great Britain (2022) respectively. The World's biggest sporting event is once again set to rock the stage this Winter 2023, to be hosted at the New Arena in China. To know who will be the best of the best - you must keep your eyes on this space for more info...</p>
+    </section>
+
+
+    <section>
+        <h2>Participating Teams and <re>Captains</re></h2>
+        <table>
+            <tr>
+                <th>Team</th>
+                <th>Captain</th>
+                <th>Pseudoname</th>
+            </tr>
+            <tr>
+                <td>GREAT BRITAIN</td>
+                <td>Anish Banerjee</td>
+                <td>Ben Stokes</td>
+            </tr>
+	    <tr>
+                <td>CHINA</td>
+                <td>Spandan Das</td>
+                <td>Xon Xina</td>
+            </tr>
+	    <tr>
+                <td>ARGENTINA</td>
+                <td>Soham Bandyopadhyay</td>
+                <td>Lionel Messi</td>
+            </tr>
+	    <tr>
+                <td>NETHERLANDS</td>
+                <td>Debdiptta David Majumder</td>
+                <td>Max Verstappen</td>
+            </tr>
+	    <tr>
+                <td>GUATEMALA</td>
+                <td>Basil Labib</td>
+                <td>Fidel Castro</td>
+            </tr>
+	</table>
+    </section>
+ 
+
+    <section>
+        <h2>Schedule of <re>Events</re></h2>
+        <table>
+            <tr>
+                <th>Match Number</th>
+                <th>Home Team</th>
+                <th>Away Team</th>
+            </tr>
+            <tr>
+                <td>GROUP STAGE <re>1</re></td>
+                <td>CHINA</td>
+                <td>ARGENTINA</td>
+            </tr>
+	    <tr>
+                <td>GROUP STAGE <re>2</re></td>
+                <td>GREAT BRITAIN</td>
+                <td>GUATEMALA</td>
+            </tr>
+	    <tr>
+                <td>GROUP STAGE <re>3</re></td>
+                <td>NETHERLANDS</td>
+                <td>CHINA</td>
+            </tr>
+	    <tr>
+                <td>GROUP STAGE <re>4</re></td>
+                <td>GREAT BRITAIN</td>
+                <td>ARGENTINA</td>
+            </tr>
+	    <tr>
+                <td>GROUP STAGE <re>5</re></td>
+                <td>GUATEMALA</td>
+                <td>NETHERLANDS</td>
+            </tr>
+	    <tr>
+                <td>GROUP STAGE <re>6</re></td>
+                <td>CHINA</td>
+                <td>GREAT BRITAIN</td>
+            </tr>
+	    <tr>
+                <td>GROUP STAGE <re>7</re></td>
+                <td>ARGENTINA</td>
+                <td>GUATEMALA</td>
+            </tr>
+	    <tr>
+                <td>GROUP STAGE <re>8</re></td>
+                <td>NETHERLANDS</td>
+                <td>GREAT BRITAIN</td>
+            </tr>
+	    <tr>
+                <td>GROUP STAGE <re>9</re></td>
+                <td>GUATEMALA</td>
+                <td>CHINA</td>
+            </tr>
+    	    <tr>
+                <td>GROUP STAGE <re>10</re></td>
+                <td>ARGENTINA</td>
+                <td>NETHERLANDS</td>
+            </tr>
+	    <tr>
+                <td><re>ELIM</re>INATOR</td>
+                <td>TEAM 4TH</td>
+                <td>TEAM 5TH</td>
+            </tr>
+	    <tr>
+                <td><re>QUARTER</re> FINALS</td>
+                <td>TEAM 3RD</td>
+                <td>WINNER OF ELIMINATOR</td>
+            </tr>
+	    <tr>
+                <td><re>SEMI</re> FINALS</td>
+                <td>TEAM 2ND</td>
+                <td>WINNER OF QUARTER FINALS</td>
+            </tr>
+	    <tr>
+                <td><re>GRAND</re> FINAL</td>
+                <td>TEAM 1ST</td>
+                <td>WINNER OF SEMI FINALS</td>
+            </tr>
+
+
+        </table>
+    </section>
+
+
+    <section>
+        <h2>Points <re>Table</re></h2>
+        <table>
+            <tr>
+		<th>Position</th>
+                <th>Team</th>
+                <th>Matches Played</th>
+                <th>Matches Won (W)</th>
+                <th>Points</th>
+		<th>Net Run Rate (NRR)</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>GREAT BRITAIN</td>
+                <td>0</td>
+		<td>0</td>
+                <td>0</td>
+                <td>0.000</td>
+            </tr>
+	    <tr>
+                <td>1</td>
+                <td>CHINA</td>
+		<td>0</td>
+		<td>0</td>
+                <td>0</td>
+                <td>0.000</td>
+            </tr>
+	    <tr>
+                <td>1</td>
+                <td>ARGENTINA</td>
+		<td>0</td>
+		<td>0</td>
+                <td>0</td>
+                <td>0.000</td>
+            </tr>
+	    <tr>
+                <td>1</td>
+                <td>NETHERLANDS</td>
+		<td>0</td>
+		<td>0</td>
+                <td>0</td>
+                <td>0.000</td>
+            </tr>
+	    <tr>
+                <td>1</td>
+                <td>GUATEMALA</td>
+		<td>0</td>
+		<td>0</td>
+                <td>0</td>
+                <td>0.000</td>
+            </tr>
+	</table>
+
+	<p><bl>Net Run Rate (NRR)</bl> is to be calculated as the <bl>Ratio</bl> of <re>Margin of Victory in Points</re> to <re>The Total Number of Points played for in that game</re>. It is to be <bl>added</bl> to the Team that emerges Victorious and <re>subtracted</re> from the Team that Loses. In case of a Tie in the Points table, the <re>Tie Breaker</re> would be on the Net Run Rate for a higher position.</p>
+    </section> 
+
+
+    <section>
+
+        <h2>Theme <re>Slides</re></h2>
+        <div class="slideshow-container">
+	    <div class="mySlides">
+                <img class="slide-image" src="logo1.png" alt="Event Highlight 1">
+            </div>
+	    <div class="mySlides">
+                <img class="slide-image" src="HEAD1.png" alt="Event Highlight 2">
+            </div>
+            <div class="mySlides">
+                <img class="slide-image" src="3.png" alt="Event Highlight 3">
+            </div>
+            <div class="mySlides">
+                <img class="slide-image" src="4.png" alt="Event Highlight 4">
+            </div>
+            <div class="mySlides">
+                <img class="slide-image" src="ITOD.png" alt="Event Highlight 5">
+            </div>
+	    <div class="mySlides">
+                <img class="slide-image" src="ODODOT.png" alt="Event Highlight 6">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </section>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+            setTimeout(showSlides, 3000);
+        }
+
+        showSlides();
+    </script>
+
+
+    <section>
+        <h2>General <re>Information</re></h2>
+        <p>1. All Rules and Regulations to be followed in this Tournament will be in strict accordance to those mentioned in the Official HTT Rulebook published by WFC-HTT, Second Edition - October 2023.</p>
+	<p>2. We do not tolerate racism, favouritism, monetary influence or fixing of any sort in any game. Any violations would attract strict ban from the game and other punishments.</p>
+    </section>
+
+    <section>
+        <h2>Notifications</h2>
+        <div class="notification">
+            <div class="notification-item">
+                <strong><bl>09-11-2023: </bl>1. Notification on Conduction of HTTWC 2023 </strong>
+                <a href="httwc23-notice.pdf" target="_blank">Click here</a>
+            </div>
+	    <div class="notification-item">
+                <strong><bl>01-12-2023: </bl>2. The WFC-HTT proudly announces the usage of its Indigenous Scoreboard for HTTWC23 </strong>
+                <a href="https://tinyurl.com/HTTWC23Scoreboard" target="_blank">Click here</a>
+            </div>
+        </div>
+    </section>
+
+    <section> 
+
+        <h2>Sponsors and <re>Associates</re></h2>
+        <ul>
+            <li>
+                <img src="WE FIVE TYRES.png" alt="Sponsor 1 Logo">
+                <img src="WE FIVE GAZETTE.png" alt="Sponsor 2 Logo">
+		<img src="WE FIVE TV.png" alt="Sponsor 3 Logo">
+                <img src="WE FIVE AIRLINES.png" alt="Sponsor 4 Logo">
+		<img src="WE FIVE APPLE.png" alt="Sponsor 5 Logo">
+            </li>
+        </ul>
+    </section>
+
+
+	<footer>
+		(C) Copyright Reserved. We Five Council for Hand Table Tennis (WFC-HTT) @ 2023
+	</footer>
+
+</body>
+</html>
